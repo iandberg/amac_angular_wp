@@ -1,0 +1,157 @@
+/*
+Theme Name: Twenty Fifteen
+Theme URI: https://wordpress.org/themes/twentyfifteen
+Template: twentyfifteen
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: twentyfifteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+body{
+	background: #FFF;
+}
+body:before{
+	content: none;
+}
+
+.container{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+	.container{
+		width: 100%;
+	}
+}
+
+/* =-=-=-=-=-=-=-[ ng-animate stuff ]=-=-=-=-=-=-=- */
+
+
+	[ui-view].ng-enter, [ui-view].ng-leave {
+		 -webkit-transition: .5s linear all;
+/* 		 transition: 5s linear all; /* All other modern browsers and IE10+ */
+	}
+	.ng-enter.ng-enter-active,
+	.ng-leave{
+		 opacity: 1;
+		 
+	}
+	.ng-enter,
+	.ng-leave.ng-leave-active{
+		 opacity: 0;
+	}
+
+
+/* =-=-=-=-=-=-=-[ header ]=-=-=-=-=-=-=- */
+
+#logo_nav{
+	background: url('images/logo_bkgnd.jpg') no-repeat center #000;
+	height: 314px;
+	padding: 215px 0 0;
+}
+
+#main_nav,
+#main_nav li{
+	list-style: none;
+}
+
+#main_nav li{
+	float: left;
+}
+#main_nav li a{
+	padding: 0 10px;
+}
+
+/* =-=-=-=-=-=-=-[ content ]=-=-=-=-=-=-=- */
+
+.page_title{
+	height: 115px;
+	margin-top: 16px;
+}
+#content_area{
+	position: relative;
+}
+#content_area .the_content,
+#content_area .the_content .the_sub_content{
+	position: absolute;
+		top: 0;
+		left: 0;
+}
+#content_area .the_content{
+	width: 100%;
+}
+#content_area .the_content .the_sub_content{
+	width: 85%;
+	left: 15%;
+}
+#left_col,
+#right_col{
+	float: left;
+	position: relative;
+	height: 1px;
+}
+
+#left_col{
+	width: 18%;
+}
+#right_col{
+	width: 82%;
+}
+
+/* =-=-=-=-=-=-=-[ left nav ]=-=-=-=-=-=-=- */
+
+#left_nav,
+#left_nav li{
+	list-style: none;
+}
+#left_nav li a{
+	color: #197b30;
+}
+#left_nav{
+	position: absolute;
+	right: 0;
+}
+#active_fist{
+	position: absolute;
+		top: 0;
+		left: -45px;
+	width: 40px;
+	height: 38px;
+	background: url('images/tinyfist.jpg') no-repeat;
+	
+	-moz-transition: 	all .5s;
+	-webkit-transition: all .5s;
+	-o-transition: 		all .5s;
+	transition: 		all .5s;
+
+}
+/* fist positions based on class */
+#active_fist.programs{ 
+	opacity: 0;
+}
+#active_fist.kung-fu{ top: 0 }
+
+#active_fist.tai-chi, #active_fist.tai-chi-remove,
+#active_fist.special, #active_fist.special-remove{
+	top: 30px
+}
+#active_fist.kids-classes, #active_fist.kids-classes-remove,
+#active_fist.rates, #active_fist.rates-remove{
+	top: 60px
+}
+#active_fist.private-lessons, #active_fist.private-lessons-remove{ top: 90px }
+
+
+/* =-=-=-=-=-=-=-[ programs ]=-=-=-=-=-=-=- */
+
+.programs .page_title{
+	background: url('images/page_headers/programs.png') no-repeat right top transparent;
+}

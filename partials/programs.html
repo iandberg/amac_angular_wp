@@ -1,0 +1,17 @@
+<div class="the_content programs">
+	<div class="page_title"></div>
+	<div id="left_col">
+		<ul id="left_nav">
+			<li><a ui-sref-active="active" ui-sref="programs.kung-fu">Kung Fu</a></li>
+			<li><a ui-sref-active="active" ui-sref="programs.tai-chi">T'ai Chi & More</a></li>
+			<li><a ui-sref-active="active" ui-sref="programs.kids-classes">Kids' Classes</a></li>
+			<li><a ui-sref-active="active" ui-sref="programs.private-lessons">Private Lessons</a></li>
+			<li id="active_fist" class="{{ fist.active }}" ></li>
+		</ul>
+	</div>
+	<div id="right_col" class="clearfix">
+		<div class="the_sub_content" ui-view>
+			<div ng-bind-html="content"></div>
+		</div>
+	</div>
+</div>

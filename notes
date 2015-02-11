@@ -1,0 +1,14 @@
+html app
+	body ng-controller
+		ui-sref link home
+		ui-sref link programs
+		
+		div ui-view
+			partial:
+				ui-sref link programs.kung-fu
+				ui-sref link programs.tai-chi
+				ui-view
+
+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

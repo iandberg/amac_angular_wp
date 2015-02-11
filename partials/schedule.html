@@ -1,0 +1,16 @@
+<div class="the_content schedule">
+	<div class="page_title"></div>
+	<div id="left_col">
+		<ul id="left_nav">
+			<li><a ui-sref-active="active" ui-sref="schedule.schedule">Schedule</a></li>
+			<li><a ui-sref="schedule.special">Special Events</a></li>
+			<li><a ui-sref="schedule.rates">Rates</a></li>
+			<li id="active_fist" class="{{ fist.active }}" ></li>
+		</ul>
+	</div>
+	<div id="right_col" class="clearfix">
+		<div class="the_sub_content" ui-view>
+			<div ng-bind-html="content"></div>
+		</div>
+	</div>
+</div>
