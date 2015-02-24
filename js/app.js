@@ -44,7 +44,7 @@ myapp.config(function($stateProvider, $urlRouterProvider) {
 	})
 	.state('shop', {
 	  url: "/shop",
-	  templateUrl: BlogInfo.partials + "programs.html",
+	  templateUrl: BlogInfo.partials + "shop.html",
 	  controller: 'MainController',
 	})
 	.state('programs', {
@@ -74,13 +74,16 @@ myapp.config(function($stateProvider, $urlRouterProvider) {
 	})
 });
 
-myapp.factory('getPage',function ($http) {
+myapp.factory('getPage',function ($http, $rootScope) {
 	return function (id) {
-		return $http.get('/wp-json/posts/' + id); // we fetch the page id via url
+		return $http.get($rootScope.api+'/wp-json/posts/' + id); // we fetch the page id via url
 	}
 });
+myapp.factory('getLastPost',function ($http, $rootScope) {
+	return $http.get($rootScope.api+'/wp-json/posts?filter[posts_per_page]=1'); // we fetch the page id via url
+});
 
-myapp.controller('MainController', ['$scope', 'getPage', '$location', '$sce', '$state', function($scope, getPage, $location, $sce, $state) {
+myapp.controller('MainController', ['$scope', 'getPage', 'getLastPost', '$location', '$sce', '$state', function($scope, getPage, getLastPost, $location, $sce, $state) {
 
 	$scope.routes = { //a mapping of url to post/page ids in wordpress
 		'/home': 4,
@@ -88,6 +91,7 @@ myapp.controller('MainController', ['$scope', 'getPage', '$location', '$sce', '$
 		'/programs/kung-fu': 7,
 		'/programs/tai-chi': 10,
 		'/programs/kids-classes': 13,
+		'/programs/private-lessons': 72,
 		'/schedule': 19,
 		'/schedule/schedule': 49,
 		'/schedule/special': 47,
@@ -100,7 +104,13 @@ myapp.controller('MainController', ['$scope', 'getPage', '$location', '$sce', '$
 	},function (error) {
 		console.log('error: ', error.data);
 	})
-
+	
+	getLastPost.then(function (resp) {
+		$scope.post_content = $sce.trustAsHtml(resp.data[0].content); //we don't scan for anything, so the slideshow can work
+	},function (error) {
+		console.log('error: ', error.data);
+	})
+	
 	$scope.fist = {};
 	
 	var fistClass = function () {

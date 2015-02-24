@@ -41,6 +41,8 @@ add_filter( 'nav_menu_link_attributes', 'my_nav_menu_attribs', 10, 3 );
 function my_nav_menu_attribs( $atts, $item, $args ){
 	$post = get_post($item->object_id);
 	$atts['ui-sref'] = $post->post_name;
+	$atts['ui-sref-active'] = 'active';
 
 	return $atts;
 }
+

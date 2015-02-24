@@ -14,13 +14,15 @@ Text Domain: twentyfifteen
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
 body{
 	background: #FFF;
+	font-family: 'Lato', sans-serif;
 }
 body:before{
 	content: none;
 }
-
 .container{
 	width: 1200px;
 	margin: 0 auto;
@@ -50,6 +52,28 @@ body:before{
 	}
 
 
+/* =-=-=-=-=-=-=-[ general ]=-=-=-=-=-=-=- */
+
+ul{
+	list-style-position: inside;
+}
+a:focus{
+	outline: none;
+}
+.float_right{
+	float: right;
+}
+.float_left{
+	float: left;
+}
+.clear_both{
+	clear: both;
+}
+.amac_list{
+	list-style: none;
+	padding-left: 50px;
+}
+
 /* =-=-=-=-=-=-=-[ header ]=-=-=-=-=-=-=- */
 
 #logo_nav{
@@ -57,7 +81,11 @@ body:before{
 	height: 314px;
 	padding: 215px 0 0;
 }
-
+@media (max-width: 1200px) {
+	#logo_nav{
+		background-size: cover;
+	}
+}
 #main_nav,
 #main_nav li{
 	list-style: none;
@@ -67,7 +95,11 @@ body:before{
 	float: left;
 }
 #main_nav li a{
-	padding: 0 10px;
+	margin: 0 10px;
+	padding-bottom: 10px;
+}
+#main_nav .active{
+	border-bottom: 1px solid #333;
 }
 
 /* =-=-=-=-=-=-=-[ content ]=-=-=-=-=-=-=- */
@@ -105,6 +137,26 @@ body:before{
 #right_col{
 	width: 82%;
 }
+.single_page{
+	width: 80%;
+	margin: 40px auto 0;
+}
+@media (max-width: 1200px) {
+	#content_area .the_content .the_sub_content{
+		padding-right: 5%;
+	}
+}
+@media (max-width: 800px) {
+	#left_col,
+	#right_col{
+		float: none;
+		width: 90%;
+		margin: 0 auto;
+	}
+	#left_col{
+		height: auto;
+	}
+}
 
 /* =-=-=-=-=-=-=-[ left nav ]=-=-=-=-=-=-=- */
 
@@ -139,19 +191,48 @@ body:before{
 }
 #active_fist.kung-fu{ top: 0 }
 
-#active_fist.tai-chi, #active_fist.tai-chi-remove,
-#active_fist.special, #active_fist.special-remove{
+#active_fist.tai-chi,
+#active_fist.special{
 	top: 30px
 }
-#active_fist.kids-classes, #active_fist.kids-classes-remove,
-#active_fist.rates, #active_fist.rates-remove{
+#active_fist.kids-classes,
+#active_fist.rates{
 	top: 60px
 }
-#active_fist.private-lessons, #active_fist.private-lessons-remove{ top: 90px }
+#active_fist.private-lessons{
+	top: 90px
+}
+@media (max-width: 800px) {
+	#left_nav{
+		position: static;
+		padding-left: 15%;
+	}
+	#active_fist{
+		left: 45px;
+	}
+}
 
-
-/* =-=-=-=-=-=-=-[ programs ]=-=-=-=-=-=-=- */
+/* =-=-=-=-=-=-=-[ pages ]=-=-=-=-=-=-=- */
 
 .programs .page_title{
 	background: url('images/page_headers/programs.png') no-repeat right top transparent;
 }
+.schedule .page_title{
+	background: url('images/page_headers/schedule.png') no-repeat right top transparent;
+}
+@media (max-width: 1200px) {
+	.programs .page_title{
+		background-position: 95% top;
+	}
+}
+.mantis_image{
+	width: 54%;
+	padding-top: 125px;
+}
+.yinyang_image{
+	clear: right;
+}
+.hands_image{
+	margin-right: 70px;
+}
+
