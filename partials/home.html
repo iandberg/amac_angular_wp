@@ -1,2 +1,10 @@
-<div class="the_content" ng-bind-html="content"></div>
-<div class="latest_post" ng-bind-html="post_content"></div>
+<div class="the_content home" >
+	<div class="home_top" ng-bind-html="content"></div>
+
+	<div class="feat_post">
+		<div class="feat_post_title page_title"></div>
+		<div ng-bind-html="feat_post.title"></div>
+		<div ng-bind-html="feat_post.content"></div>
+		<img src="{{ feat_post.img_url }}"></img>
+	</div>
+</div>

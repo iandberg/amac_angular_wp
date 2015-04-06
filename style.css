@@ -192,7 +192,7 @@ a:focus{
 #active_fist.kung-fu{ top: 0 }
 
 #active_fist.tai-chi,
-#active_fist.special{
+#active_fist.special-events{
 	top: 30px
 }
 #active_fist.kids-classes,
@@ -236,3 +236,9 @@ a:focus{
 	margin-right: 70px;
 }
 
+
+/* =-=-=-=-=-=-=-[ home page ]=-=-=-=-=-=-=- */
+
+.feat_post_title{
+	background: url('images/page_headers/happenings.png') no-repeat left top transparent;
+}
